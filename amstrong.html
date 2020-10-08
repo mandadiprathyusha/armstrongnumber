@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Armstrong</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+
+        <script type="text/javascript">
+        function arm(){
+            var sum = 0;
+            var number = document.getElementById("box1").value;
+            var temp = number;
+            while (temp > 0) {
+                var remainder = temp % 10;
+                sum += remainder * remainder * remainder;
+                temp = parseInt(temp / 10);
+            }
+            if (sum == number) {
+                document.getElementById("result1").innerHTML=number + " is Armstrong number";
+            }
+            else {
+                document.getElementById("result1").innerHTML=number + " is not Armstrong number";
+            }
+        }
+        </script>
+
+    </head>
+    <body>
+        <h1 class="heading">Armstrong Number</h1>
+
+        <div class="whole">
+            <img class="background"src="pic2.png" alt="">
+             <label for="" class="enter">Enter the number</label><br>
+            <input type="text" name="enter the number" class="box" id="box1">
+            <button type="button" class="b" onClick=arm() >Enter</button>
+            <p class="result" id="result1"></p>
+
+        </div>
+    </body>
+</html>
